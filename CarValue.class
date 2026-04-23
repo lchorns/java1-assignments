@@ -1,0 +1,19 @@
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+import java.util.Scanner;
+
+public class CarValue {
+   public CarValue() {
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      Car var2 = new Car();
+      int var3 = var1.nextInt();
+      int var4 = var1.nextInt();
+      int var5 = var1.nextInt();
+      var2.setModelYear(var3);
+      var2.setPurchasePrice(var4);
+      var2.calcCurrentValue(var5);
+      var2.printInfo();
+   }
+}
