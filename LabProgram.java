@@ -1,38 +1,33 @@
 import java.util.Scanner;
 
-public class LabProgram{
+public class LabProgram {
 
-    public static int fibonacci(int n) {
-        if(n<0) {
-        return -1;   
-        }
+   public static int getWordFrequency(String[] wordsList, int listSize, String currWord) {
+      int count = 0;
 
-        if(n==0) {
-        return 0;
-        }
+      for (int i = 0; i < listSize; i++) {
+         if (wordsList[i].equalsIgnoreCase(currWord)) {
+            count++;
+         }
+      }
 
-        if (n==1) {
-        return 1;
-        }
+      return count;
+   }
 
-        int prev1 = 0;
-        int prev2 = 1;
-        int current = 0;
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
 
-        for (int i = 2; i <= n; i++) {
-            current = prev1 + prev2;
-            prev1 = prev2;
-            prev2 = current;
-        }
+      int listSize = scnr.nextInt();
+      String[] wordsList = new String[20];
 
-        return current;
-    }
+      for (int i = 0; i < listSize; i++) {
+         wordsList[i] = scnr.next();
+      }
 
-    public static void main(String[] args) {
-        java.util.Scanner scnr = new Scanner(System.in);
-        int startNum;
+      for (int i = 0; i < listSize; i++) {
+         System.out.println(wordsList[i] + " " + getWordFrequency(wordsList, listSize, wordsList[i]));
+      }
 
-        startNum = scnr.nextInt();
-        System.out.println("fibonacci(" + startNum + ") is " + fibonacci(startNum));
-    }
+      scnr.close();
+   }
 }
